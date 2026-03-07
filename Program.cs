@@ -2,6 +2,7 @@
 using System.Linq.Expressions;
 using APS_Eq_TeamAltf4_U2.EjecutoresEjercicios;
 using APS_Eq_TeamAltF4_U2.EjecutoresEjercicios;
+using APS_Eq_TeamAltF4_U2.v2.EjecutoresEjercicios;
 
 namespace APS_Eq_TeamAltf4_U2
 {
@@ -22,6 +23,8 @@ namespace APS_Eq_TeamAltf4_U2
             Console.WriteLine("8. Simulacion de un ATM");
             Console.WriteLine("9. Indice de Masa Corporal");
             Console.WriteLine("10. Distancia entre dos puntos");
+            Console.WriteLine("11. Promedio de 3 calificaciones");
+            Console.WriteLine("12. Es número primo");
             Console.WriteLine("------------------------");
             Console.WriteLine("Ingrese el número del ejercicio que desea ejecutar:");
 
@@ -63,6 +66,9 @@ namespace APS_Eq_TeamAltf4_U2
                     break;
                 case 11:
                     new RunnerPromedioDe3Calificaciones();
+                    break;
+                case 12:
+                    new RunnerEsNumPrimo();
                     break;
             }
         }

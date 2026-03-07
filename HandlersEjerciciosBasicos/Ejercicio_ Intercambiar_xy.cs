@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace APS_Eq_TeamAltf4_U2.HandlersEjerciciosBasicos
-{
+{   
     class Ejercicio__Intercambiar_xy : Ejercicio
     {
         
