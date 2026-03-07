@@ -1,0 +1,4 @@
+﻿Tarea para 3/9/2026
+-> Promedio de 3 calificaciones
+-> Determinar si un número es primo 
+-> Factorial 
