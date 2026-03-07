@@ -27,7 +27,7 @@ namespace APS_Eq_TeamAltF4_U2.v2.HandlersEjerciciosBasicos
         public override void Ejecutar()
         {
             double resultado = (Convert.ToDouble(Cal1.Calificacion1) + Convert.ToDouble(Cal1.Calificacion2) + Convert.ToDouble(Cal1.Calificacion3)) / 3;
-            Console.WriteLine($"El promedio de las calificaciones es: {resultado}");
+            Console.WriteLine("El promedio de las calificaciones es: "+ resultado);
         }
     }
 }

@@ -25,6 +25,7 @@ namespace APS_Eq_TeamAltf4_U2
             Console.WriteLine("10. Distancia entre dos puntos");
             Console.WriteLine("11. Promedio de 3 calificaciones");
             Console.WriteLine("12. Es número primo");
+            Console.WriteLine("13. Factorial de un número");
             Console.WriteLine("------------------------");
             Console.WriteLine("Ingrese el número del ejercicio que desea ejecutar:");
 
@@ -69,6 +70,9 @@ namespace APS_Eq_TeamAltf4_U2
                     break;
                 case 12:
                     new RunnerEsNumPrimo();
+                    break;
+                case 13:
+                    new RunnerFactorial();
                     break;
             }
         }

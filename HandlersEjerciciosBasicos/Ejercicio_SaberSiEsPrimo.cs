@@ -19,13 +19,14 @@ namespace APS_Eq_TeamAltF4_U2.v2.HandlersEjerciciosBasicos
         }
         public override void Ejecutar()
         {
-            bool esPrimo = true;
+            bool esPrimo;
             if (Convert.ToDouble(NumPrimo.Numero) < 2)
             {
                 esPrimo = false;
             }
             else
             {
+                esPrimo = true;
                 for (int i = 2; i <= Math.Sqrt(Convert.ToDouble(NumPrimo.Numero)); i++)
                 {
                     if (Convert.ToDouble(NumPrimo.Numero) % i == 0)
@@ -37,11 +38,11 @@ namespace APS_Eq_TeamAltF4_U2.v2.HandlersEjerciciosBasicos
             }
             if (esPrimo)
             {
-                Console.WriteLine($"El número {NumPrimo.Numero} es primo.");
+                Console.WriteLine("El número " + NumPrimo.Numero + " es primo.");
             }
             else
             {
-                Console.WriteLine($"El número {NumPrimo.Numero} no es primo.");
+                Console.WriteLine("El número " + NumPrimo.Numero + " no es primo.");
             }
         }
     }

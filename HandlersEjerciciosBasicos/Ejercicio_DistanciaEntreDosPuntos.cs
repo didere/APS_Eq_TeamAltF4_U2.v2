@@ -30,7 +30,7 @@ namespace APS_Eq_TeamAltf4_U2.HandlersEjerciciosBasicos
             double part2 = Math.Pow(Convert.ToDouble(Punto1.CoordY - Punto2.CoordY), 2);
             double resultado = Math.Sqrt(part1 + part2);
 
-            Console.WriteLine($"Resultado: {resultado}");
+            Console.WriteLine("Resultado: "+ resultado);
         }
 
 

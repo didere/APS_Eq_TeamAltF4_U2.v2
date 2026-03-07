@@ -1,37 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace APS_Eq_TeamAltf4_U2.HandlersEjerciciosBasicos
 {
-    class Ejercicio_IMC<T> : Ejercicio
-    {
+    public class Ejercicio_IMC<T> : Ejercicio where T : INumber<T>
+    { 
+        //Tipo de Dato Generico -> T
         private T peso;
-        private T altura;
+        private T estatura;
 
-        public T Peso
-        {
-            get { return peso; }
-            set { peso = value; }
-        }
+        public T Peso { get => peso; set => peso = value; }
+        public T Estatura { get => estatura; set => estatura = value; }
 
-        public T Altura
+        public Ejercicio_IMC(T peso, T estatura) :
+            base(8, "IMC",
+                "Cálculo del IMC")
         {
-            get { return altura; }
-            set { altura = value; }
-        }
-        public Ejercicio_IMC(T peso, T altura) : base(9, "Calculo de IMC", "Calcula el indice de masa corporal a partir del peso y la altura")
-        {
-            this.peso = peso;
-            this.altura = altura;
+            Peso = peso;
+            Estatura = estatura;
         }
 
         public override void Ejecutar()
         {
-            T resultado = (dynamic)Peso / ((dynamic)Altura * (dynamic)Altura);
+            T resultado = Peso / (Estatura * Estatura);
             Console.WriteLine("IMC = " + resultado);
         }
+
     }
 }
