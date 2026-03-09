@@ -27,7 +27,7 @@ namespace APS_Eq_TeamAltF4_U2.v2.HandlersEjerciciosBasicos
             for (T i = T.One ; i <= NumFactorial.Numero; i++)
             {
                 resultado *= i;
-                Console.WriteLine("Iteración"+ i + ":" +  (resultado = resultado));
+                Console.WriteLine("Iteración"+ i + ":" +  (resultado));
             }
             Console.WriteLine("El factorial de " + NumFactorial.Numero + " es: " + resultado);
         }
