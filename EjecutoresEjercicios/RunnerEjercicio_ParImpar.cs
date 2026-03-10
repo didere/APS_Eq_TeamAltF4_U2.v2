@@ -9,6 +9,8 @@ namespace APS_Eq_TeamAltf4_U2.EjecutoresEjercicios
 {
     public class RunnerEjercicio_ParImpar
     {
+        // Constructor con identificador   
+        
         public RunnerEjercicio_ParImpar()
         {
             Console.WriteLine("Ingresa un numero: ");

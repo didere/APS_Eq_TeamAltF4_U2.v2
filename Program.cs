@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Linq.Expressions;
 using APS_Eq_TeamAltf4_U2.EjecutoresEjercicios;
+using APS_Eq_TeamAltf4_U2.HandlersEjerciciosBasicos;
 using APS_Eq_TeamAltF4_U2.EjecutoresEjercicios;
 using APS_Eq_TeamAltF4_U2.v2.EjecutoresEjercicios;
+using APS_Eq_TeamAltF4_U2.v2.HandlersEjerciciosBasicos;
 
 namespace APS_Eq_TeamAltf4_U2
 {
@@ -10,26 +12,29 @@ namespace APS_Eq_TeamAltf4_U2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Clase icdia");
-            Console.WriteLine("Ejercicios básicos");
-            Console.WriteLine("------------------------");
-            Console.WriteLine("1. Par-Impar");
-            Console.WriteLine("2. Suma AB");
-            Console.WriteLine("3. Intercambio XY");
-            Console.WriteLine("4. Mayor de edad");
-            Console.WriteLine("5. Número Mayor");
-            Console.WriteLine("6. Multiplicacion AB");
-            Console.WriteLine("7. Suma con datos Genericos");
-            Console.WriteLine("8. Simulacion de un ATM");
-            Console.WriteLine("9. Indice de Masa Corporal");
-            Console.WriteLine("10. Distancia entre dos puntos");
-            Console.WriteLine("11. Promedio de 3 calificaciones");
-            Console.WriteLine("12. Es número primo");
-            Console.WriteLine("13. Factorial de un número");
-            Console.WriteLine("14. Operacion de Linea recta");
-            Console.WriteLine("------------------------");
-            Console.WriteLine("Ingrese el número del ejercicio que desea ejecutar:");
+            Console.WriteLine("Clase_ICDIA_Unidad2");
 
+            List<Ejercicio> listaEjercicios = new List<Ejercicio>();
+            listaEjercicios.Add(new Ejercicio_ParImpar());
+            listaEjercicios.Add(new Ejercicio_SumaAB());
+            listaEjercicios.Add(new Ejercicio__Intercambiar_xy());
+            listaEjercicios.Add(new Ejercicio_CompruebaMayoriaEdad());
+            listaEjercicios.Add(new Ejercicio_NumeroMayor());
+            listaEjercicios.Add(new Ejercicio_MultiplicacionAB());
+            listaEjercicios.Add(new EjercicioSumaAB_Genericos<double>());
+            listaEjercicios.Add(new Ejercicio_ATM());
+            listaEjercicios.Add(new Ejercicio_IMC<double>());
+            listaEjercicios.Add(new Ejercicio_DistanciaEntreDosPuntos<int>());
+            listaEjercicios.Add(new Ejercicio_PromedioDe3Calificaciones<float>());
+            listaEjercicios.Add(new Ejercicio_SaberSiEsPrimo<int>());
+            listaEjercicios.Add(new Ejercicio_NumeroFactorial<int>());
+            listaEjercicios.Add(new Ejercicio_LineaRecta<int>());
+            listaEjercicios.Add(new Ejercicio_PerimetroPoligonoRegular<int>());
+
+            foreach (Ejercicio item in listaEjercicios)
+            {
+                Console.WriteLine(item);
+            }
 
             int idx;
             int.TryParse(Console.ReadLine(), out idx);
@@ -77,6 +82,9 @@ namespace APS_Eq_TeamAltf4_U2
                     break;
                 case 14:
                     new RunnerLineaRecta();
+                    break;
+                case 15:
+                    new RunnerPerimetroPolRegular();
                     break;
             }
         }

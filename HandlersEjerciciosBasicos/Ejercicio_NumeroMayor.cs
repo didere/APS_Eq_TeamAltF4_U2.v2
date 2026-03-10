@@ -20,6 +20,10 @@ namespace APS_Eq_TeamAltf4_U2.HandlersEjerciciosBasicos
             B = b;
         }
 
+        public Ejercicio_NumeroMayor() : base(5, "Número Mayor", "Determinar cuál de dos números es mayor")
+        {
+        }
+
         public override void Ejecutar()
         {
             if (a > b)

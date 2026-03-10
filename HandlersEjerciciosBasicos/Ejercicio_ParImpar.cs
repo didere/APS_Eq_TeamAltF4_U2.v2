@@ -16,6 +16,13 @@ namespace APS_Eq_TeamAltf4_U2.HandlersEjerciciosBasicos
             get => n; 
             set => n = value; 
         }
+
+        public Ejercicio_ParImpar()
+        : base(1, "Par-Impar",
+            "Determinar si un número es par o impar")
+        {
+        }
+
         // Constructor
         public Ejercicio_ParImpar(int n) : base(1, "Par-Impar", "Se verifica si el numero es par o impar")
         {

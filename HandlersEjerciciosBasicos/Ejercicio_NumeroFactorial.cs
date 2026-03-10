@@ -14,7 +14,10 @@ namespace APS_Eq_TeamAltF4_U2.v2.HandlersEjerciciosBasicos
         NumFactorial<T> numFactorial;
 
         public NumFactorial<T> NumFactorial { get => numFactorial; set => numFactorial = value; }
-
+        public Ejercicio_NumeroFactorial() : base(13, "Número factorial", "Calcula el factorial de un número")
+        {
+          
+        }
         public Ejercicio_NumeroFactorial(T numero) : base(13, "Número factorial", "Calcula el factorial de un número")
         {
             NumFactorial = new NumFactorial<T>(numero);

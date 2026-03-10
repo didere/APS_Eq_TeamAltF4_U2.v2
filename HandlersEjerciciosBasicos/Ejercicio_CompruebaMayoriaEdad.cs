@@ -20,6 +20,10 @@ namespace APS_Eq_TeamAltf4_U2.HandlersEjerciciosBasicos
         {
             Edad = edad;
         }
+        public Ejercicio_CompruebaMayoriaEdad() : base(4, "Checar si es un ciudadano", "Veridicar si es mayor de edad")
+        {
+            
+        }
         public override void Ejecutar()
         {
             if (edad >= 18)

@@ -39,5 +39,10 @@ namespace APS_Eq_TeamAltf4_U2
         {
         
         }
+
+        public override string ToString()
+        {
+            return "(" + Identificador + ") - Nombre: " + NombreEjercicio + " - Descripción: " + Descripcion;
+        }
     }
 }

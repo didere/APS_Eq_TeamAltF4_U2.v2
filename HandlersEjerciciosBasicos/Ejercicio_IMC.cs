@@ -15,9 +15,12 @@ namespace APS_Eq_TeamAltf4_U2.HandlersEjerciciosBasicos
 
         public T Peso { get => peso; set => peso = value; }
         public T Estatura { get => estatura; set => estatura = value; }
-
+        public Ejercicio_IMC() : base(9, "IMC","Cálculo del IMC")
+        {
+            
+        }
         public Ejercicio_IMC(T peso, T estatura) :
-            base(8, "IMC",
+            base(9, "IMC",
                 "Cálculo del IMC")
         {
             Peso = peso;

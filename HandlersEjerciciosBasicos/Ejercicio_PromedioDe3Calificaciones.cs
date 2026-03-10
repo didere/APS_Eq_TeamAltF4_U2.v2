@@ -19,6 +19,10 @@ namespace APS_Eq_TeamAltF4_U2.v2.HandlersEjerciciosBasicos
         public Calificaciones<T> Cal2 { get => cal2; set => cal2 = value; }
         public Calificaciones<T> Cal3 { get => cal3; set => cal3 = value; }
 
+        public Ejercicio_PromedioDe3Calificaciones() : base(11, "Promedio de 3 calificaciones", "Calcula el promedio de 3 calificaciones")
+        {
+           
+        }
         public Ejercicio_PromedioDe3Calificaciones(T cal1, T cal2, T cal3) : base(11, "Promedio de 3 calificaciones", "Calcula el promedio de 3 calificaciones")
         {
             Cal1 = new Calificaciones<T>(cal1, cal2, cal3);

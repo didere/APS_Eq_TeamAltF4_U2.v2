@@ -20,7 +20,10 @@ namespace APS_Eq_TeamAltf4_U2.HandlersEjerciciosBasicos
         {
             get => b; set => b = value;
         }
-
+        public Ejercicio_MultiplicacionAB() : base(6, "Multiplicacion AB", "Multiplicar los numeros A y B")
+        {
+ 
+        }
         public Ejercicio_MultiplicacionAB(int a, int b) : base (6, "Multiplicacion AB", "Multiplicar los numeros A y B")
         {
             A = a;

@@ -12,8 +12,12 @@ namespace APS_Eq_TeamAltf4_U2.HandlersEjerciciosBasicos
         private int b;
         public int A { get { return a; } set { a = value; } }
 
-        public int B { get { return b; } set { b = value; } }   
+        public int B { get { return b; } set { b = value; } }
 
+        public Ejercicio_SumaAB() : base(2, "Suma AB", "Suma de dos Numeros")
+        {
+           
+        }
         public Ejercicio_SumaAB(int a, int b) : base (2, "Suma AB", "Suma de dos Numeros")
         {
             A = a;

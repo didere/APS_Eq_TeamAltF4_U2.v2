@@ -14,10 +14,15 @@ namespace APS_Eq_TeamAltf4_U2.HandlersEjerciciosBasicos
         {
             get => cantidad; set => cantidad = value;
         }
+        public Ejercicio_ATM() : base(8, "ATM", "Simulacion de un ATM para retirar dinero")
+        {
+           
+        }
         public Ejercicio_ATM(double cantidad) : base(8, "ATM", "Simulacion de un ATM para retirar dinero")
         {
             Cantidad = cantidad;
         }
+
 
         public override void Ejecutar()
         {

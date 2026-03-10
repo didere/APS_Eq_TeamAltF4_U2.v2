@@ -28,19 +28,3 @@ namespace APS_Eq_TeamAltf4_U2.EjecutoresEjercicios
 
     }
 }
-
-// Tarea: 
-// -> Promedio de 3 calificaciones
-// -> Determinar si un número es primo 
-// -> Factorial : 
-/*  
-n = 5
-5 * 4 * 3 * 2 * 1
-
-n = 3
-3 * 2 *1
-
-n = 4
-4 * 3 * 2 * 1
-
-*/  

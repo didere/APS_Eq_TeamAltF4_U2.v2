@@ -30,6 +30,12 @@ namespace APS_Eq_TeamAltf4_U2.HandlersEjerciciosBasicos
             B = b;
         }
 
+        public EjercicioSumaAB_Genericos() : base(7, "Suma con datos Genericos", "Suma con datos genericos")
+        {
+          
+        }
+
+
         public override void Ejecutar()
         {
             // parse es string to numero

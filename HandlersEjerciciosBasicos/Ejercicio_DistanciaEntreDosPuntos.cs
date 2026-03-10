@@ -15,7 +15,10 @@ namespace APS_Eq_TeamAltf4_U2.HandlersEjerciciosBasicos
 
         public Punto<T> Punto1 { get => punto1; set => punto1 = value; }
         public Punto<T> Punto2 { get => punto2; set => punto2 = value; }
-
+        public Ejercicio_DistanciaEntreDosPuntos() : base(10, "Distancia entre 2 puntos", "Cálcula la distancia entre dos puntos")
+        {
+      
+        }
         public Ejercicio_DistanciaEntreDosPuntos(T p1coorX, T p1coorY,
             T p2coorX, T p2coorY) : base(10, "Distancia entre 2 puntos",
             "Cálcula la distancia entre dos puntos")

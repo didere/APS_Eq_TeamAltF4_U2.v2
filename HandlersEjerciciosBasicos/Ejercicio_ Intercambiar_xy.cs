@@ -19,6 +19,11 @@ namespace APS_Eq_TeamAltf4_U2.HandlersEjerciciosBasicos
             N = n;
             this.n = n;
         }
+
+        public Ejercicio__Intercambiar_xy( ) : base(3, "Intercambiar XY", "Intercambiar los valores de X y Y")
+        {
+           
+        }
         public override void Ejecutar()
         {
             x= N / 10; 

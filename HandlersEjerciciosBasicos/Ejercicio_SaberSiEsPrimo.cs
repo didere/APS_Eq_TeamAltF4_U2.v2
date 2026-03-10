@@ -13,6 +13,11 @@ namespace APS_Eq_TeamAltF4_U2.v2.HandlersEjerciciosBasicos
     {
         NumPrimo<T> numPrimo;
         public NumPrimo<T> NumPrimo { get => numPrimo; set => numPrimo = value; }
+
+        public Ejercicio_SaberSiEsPrimo() : base(12, "Saber si es primo", "Determina si un número es primo o no")
+        {
+          
+        }
         public Ejercicio_SaberSiEsPrimo(T numero) : base(12, "Saber si es primo", "Determina si un número es primo o no")
         {
             NumPrimo = new NumPrimo<T>(numero);

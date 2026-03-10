@@ -42,7 +42,10 @@ namespace APS_Eq_TeamAltF4_U2.v2.HandlersEjerciciosBasicos
             get => valor_b;
             set => valor_b = value;
         }
-
+        public Ejercicio_LineaRecta() : base(14, "Linea recta", "Genera un punto de una linea recta")
+        {
+      
+        }
         public Ejercicio_LineaRecta(T m, T x, T b) : base (14, "Linea recta", "Genera un punto de una linea recta")
         {
             ValorM = m;
