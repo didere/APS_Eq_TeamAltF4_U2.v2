@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,16 +12,30 @@ namespace APS_Eq_TeamAltF4_U2.v2.HandlersEjerciciosBasicos
     internal class Ejercicio_SaberSiEsPrimo<T> : Ejercicio where T : INumber<T>
     {
         NumPrimo<T> numPrimo;
-        public NumPrimo<T> NumPrimo { get => numPrimo; set => numPrimo = value; }
+
+        public NumPrimo<T> NumPrimo
+        {
+            get => numPrimo;
+            set
+            {
+                if (value == null)
+                {
+                    throw new ArgumentNullException("El número primo no puede ser nulo.");
+                }
+                numPrimo = value;
+            }
+        }
 
         public Ejercicio_SaberSiEsPrimo() : base(12, "Saber si es primo", "Determina si un número es primo o no")
         {
           
         }
+
         public Ejercicio_SaberSiEsPrimo(T numero) : base(12, "Saber si es primo", "Determina si un número es primo o no")
         {
             NumPrimo = new NumPrimo<T>(numero);
         }
+
         public override void Ejecutar()
         {
             bool esPrimo;
@@ -41,6 +55,7 @@ namespace APS_Eq_TeamAltF4_U2.v2.HandlersEjerciciosBasicos
                     }
                 }
             }
+
             if (esPrimo)
             {
                 Console.WriteLine("El número " + NumPrimo.Numero + " es primo.");

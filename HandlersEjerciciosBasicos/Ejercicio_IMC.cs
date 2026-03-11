@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
@@ -13,15 +13,39 @@ namespace APS_Eq_TeamAltf4_U2.HandlersEjerciciosBasicos
         private T peso;
         private T estatura;
 
-        public T Peso { get => peso; set => peso = value; }
-        public T Estatura { get => estatura; set => estatura = value; }
+        public T Peso
+        {
+            get => peso;
+            set
+            {
+                if (value.CompareTo(T.Zero) <= 0)
+                {
+                    throw new ArgumentException("El peso debe ser mayor a 0.");
+                }
+                peso = value;
+            }
+        }
+
+        public T Estatura
+        {
+            get => estatura;
+            set
+            {
+                if (value.CompareTo(T.Zero) <= 0)
+                {
+                    throw new ArgumentException("La estatura debe ser mayor a 0.");
+                }
+                estatura = value;
+            }
+        }
+
         public Ejercicio_IMC() : base(9, "IMC","Cálculo del IMC")
         {
             
         }
+
         public Ejercicio_IMC(T peso, T estatura) :
-            base(9, "IMC",
-                "Cálculo del IMC")
+            base(9, "IMC", "Cálculo del IMC")
         {
             Peso = peso;
             Estatura = estatura;
@@ -32,6 +56,5 @@ namespace APS_Eq_TeamAltf4_U2.HandlersEjerciciosBasicos
             T resultado = Peso / (Estatura * Estatura);
             Console.WriteLine("IMC = " + resultado);
         }
-
     }
 }

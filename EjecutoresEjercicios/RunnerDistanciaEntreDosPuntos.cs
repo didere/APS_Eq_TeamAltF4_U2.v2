@@ -14,16 +14,33 @@ namespace APS_Eq_TeamAltf4_U2.EjecutoresEjercicios
 
             int a, b, c, d;
             //punto 1
-            a = 2;
-            b = 4;
-            //punto 2 
-            c = 5;
-            d = 3;
+            try
+            {
+                Console.WriteLine("Ingrese el valor de x1: ");
+                a = int.Parse(Console.ReadLine());
+                Console.WriteLine("Ingrese el valor de y1: ");
+                b = int.Parse(Console.ReadLine());
+                Console.WriteLine("Ingrese el valor de x2: ");
+                c = int.Parse(Console.ReadLine());
+                Console.WriteLine("Ingrese el valor de y2: ");
+                d = int.Parse(Console.ReadLine());
 
-            Ejercicio ejercicio;
-            ejercicio = new Ejercicio_DistanciaEntreDosPuntos<int>(
-                a, b, c, d);
-            ejercicio.Ejecutar();
+                Ejercicio ejercicio;
+                ejercicio = new Ejercicio_DistanciaEntreDosPuntos<int>(a, b, c, d);
+                ejercicio.Ejecutar();
+            }
+            catch (ArgumentException argumentException)
+            {
+                Console.WriteLine(argumentException.Message);
+                Console.WriteLine("Un argumento no cumple las restricciones de entrada");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error" + ex.Message);
+
+            }
+
+            
         }
 
     }

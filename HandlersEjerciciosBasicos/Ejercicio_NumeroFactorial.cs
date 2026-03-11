@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,11 +13,28 @@ namespace APS_Eq_TeamAltF4_U2.v2.HandlersEjerciciosBasicos
     {
         NumFactorial<T> numFactorial;
 
-        public NumFactorial<T> NumFactorial { get => numFactorial; set => numFactorial = value; }
+        public NumFactorial<T> NumFactorial
+        {
+            get => numFactorial;
+            set
+            {
+                if (value == null)
+                {
+                    throw new ArgumentNullException("El número factorial no puede ser nulo.");
+                }
+                if (value.Numero.CompareTo(T.Zero) < 0)
+                {
+                    throw new ArgumentException("El número para calcular el factorial no puede ser negativo.");
+                }
+                numFactorial = value;
+            }
+        }
+
         public Ejercicio_NumeroFactorial() : base(13, "Número factorial", "Calcula el factorial de un número")
         {
           
         }
+
         public Ejercicio_NumeroFactorial(T numero) : base(13, "Número factorial", "Calcula el factorial de un número")
         {
             NumFactorial = new NumFactorial<T>(numero);
@@ -25,15 +42,13 @@ namespace APS_Eq_TeamAltF4_U2.v2.HandlersEjerciciosBasicos
 
         public override void Ejecutar()
         {
-            // calcular la factorial de el numero ingresado en el runner
             T resultado = T.One;
-            for (T i = T.One ; i <= NumFactorial.Numero; i++)
+            for (T i = T.One; i <= NumFactorial.Numero; i++)
             {
                 resultado *= i;
-                Console.WriteLine("Iteración"+ i + ":" +  (resultado));
+                Console.WriteLine("Iteración" + i + ":" + (resultado));
             }
             Console.WriteLine("El factorial de " + NumFactorial.Numero + " es: " + resultado);
         }
-
     }
 }

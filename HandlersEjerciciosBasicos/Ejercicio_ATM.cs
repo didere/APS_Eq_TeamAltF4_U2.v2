@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,25 +10,35 @@ namespace APS_Eq_TeamAltf4_U2.HandlersEjerciciosBasicos
     {
         //Esta clase sera para simular un ATM en donde se ingresa cuanto se quiere retirar en el runner y se muestra el resultado de cuantos billetes de cada denominacion de mayor a menor se necesitan para retirar esa cantidad
         private double cantidad;
+
         public double Cantidad
         {
-            get => cantidad; set => cantidad = value;
+            get => cantidad;
+            set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException("La cantidad a retirar debe ser mayor a 0.");
+                }
+                                
+                cantidad = value;
+            }
         }
+
         public Ejercicio_ATM() : base(8, "ATM", "Simulacion de un ATM para retirar dinero")
         {
            
         }
+
         public Ejercicio_ATM(double cantidad) : base(8, "ATM", "Simulacion de un ATM para retirar dinero")
         {
             Cantidad = cantidad;
         }
 
-
         public override void Ejecutar()
         {
             Console.WriteLine("Cantidad a retirar: " + Cantidad);
-            int bil1000, bil500, bil200, bil100, bil50, bil20, coin10, coin5, coin2, coin1,coincentavos;
-            
+            int bil1000, bil500, bil200, bil100, bil50, bil20, coin10, coin5, coin2, coin1, coincentavos;
             
             bil1000 = (int)(Cantidad / 1000);
             Cantidad = Cantidad % 1000;
@@ -63,7 +73,6 @@ namespace APS_Eq_TeamAltf4_U2.HandlersEjerciciosBasicos
             Console.WriteLine("Monedas de 2: " + coin2);
             Console.WriteLine("Monedas de 1: " + coin1);
             Console.WriteLine("Monedas de centavos: " + coincentavos);
-            
         }
     }
 }

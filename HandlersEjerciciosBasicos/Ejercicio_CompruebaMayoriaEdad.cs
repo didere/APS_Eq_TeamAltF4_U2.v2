@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -14,16 +14,30 @@ namespace APS_Eq_TeamAltf4_U2.HandlersEjerciciosBasicos
         public int Edad
         {
             get => edad;
-            set => edad = value;
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentException("La edad no puede ser un valor negativo.");
+                }
+                if (value > 150)
+                {
+                    throw new ArgumentException("La edad ingresada no es válida (máximo 150 años).");
+                }
+                edad = value;
+            }
         }
+
         public Ejercicio_CompruebaMayoriaEdad(int edad) : base(4, "Checar si es un ciudadano", "Veridicar si es mayor de edad")
         {
             Edad = edad;
         }
+
         public Ejercicio_CompruebaMayoriaEdad() : base(4, "Checar si es un ciudadano", "Veridicar si es mayor de edad")
         {
             
         }
+
         public override void Ejecutar()
         {
             if (edad >= 18)

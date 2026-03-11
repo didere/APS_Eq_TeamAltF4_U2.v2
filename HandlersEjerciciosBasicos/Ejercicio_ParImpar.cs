@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +14,14 @@ namespace APS_Eq_TeamAltf4_U2.HandlersEjerciciosBasicos
         public int N 
         { 
             get => n; 
-            set => n = value; 
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentException("El número N no puede ser negativo.");
+                }
+                n = value;
+            }
         }
 
         public Ejercicio_ParImpar()

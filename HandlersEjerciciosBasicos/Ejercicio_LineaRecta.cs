@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
@@ -18,7 +18,14 @@ namespace APS_Eq_TeamAltF4_U2.v2.HandlersEjerciciosBasicos
         public T ValorM
         {
             get => valor_m;
-            set => valor_m = value;
+            set
+            {
+                if (value == null)
+                {
+                    throw new ArgumentNullException("El valor de M no puede ser nulo.");
+                }
+                valor_m = value;
+            }
         }
 
         public T ValorX
@@ -26,27 +33,33 @@ namespace APS_Eq_TeamAltF4_U2.v2.HandlersEjerciciosBasicos
             get => valor_x;
             set
             {
-                if (value.CompareTo(0) > 0)
+                if (value.CompareTo(T.Zero) <= 0)
                 {
-                    valor_x = value;
+                    throw new ArgumentException("El valor de X debe ser mayor a 0.");
                 }
-                else
-                {
-                    throw new ArgumentException("El valor de la primera es invalido, tu ejecucuion sera el 20 de marzo del 2026");
-                }
+                valor_x = value;
             }
         }
 
         public T ValorB
         {
             get => valor_b;
-            set => valor_b = value;
+            set
+            {
+                if (value == null)
+                {
+                    throw new ArgumentNullException("El valor de B no puede ser nulo.");
+                }
+                valor_b = value;
+            }
         }
+
         public Ejercicio_LineaRecta() : base(14, "Linea recta", "Genera un punto de una linea recta")
         {
       
         }
-        public Ejercicio_LineaRecta(T m, T x, T b) : base (14, "Linea recta", "Genera un punto de una linea recta")
+
+        public Ejercicio_LineaRecta(T m, T x, T b) : base(14, "Linea recta", "Genera un punto de una linea recta")
         {
             ValorM = m;
             ValorX = x;
@@ -56,7 +69,7 @@ namespace APS_Eq_TeamAltF4_U2.v2.HandlersEjerciciosBasicos
         public override void Ejecutar()
         {
             T resultado = ValorM * ValorX + ValorB;
-            Console.WriteLine("El resultado es: "+ resultado);
+            Console.WriteLine("El resultado es: " + resultado);
         }
     }
 }

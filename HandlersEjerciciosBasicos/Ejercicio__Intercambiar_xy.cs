@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +11,19 @@ namespace APS_Eq_TeamAltf4_U2.HandlersEjerciciosBasicos
     {
         
         private int n; int x; int y;
-        public int N { get => n; set => n = value; }
-        
+
+        public int N
+        {
+            get => n;
+            set
+            {
+                if (value < 10 || value > 99)
+                {
+                    throw new ArgumentException("El valor de N debe ser un número de dos dígitos (entre 10 y 99).");
+                }
+                n = value;
+            }
+        }
 
         public Ejercicio__Intercambiar_xy(int n) : base(3, "Intercambiar XY", "Intercambiar los valores de X y Y")
         {
@@ -24,6 +35,7 @@ namespace APS_Eq_TeamAltf4_U2.HandlersEjerciciosBasicos
         {
            
         }
+
         public override void Ejecutar()
         {
             x= N / 10; 

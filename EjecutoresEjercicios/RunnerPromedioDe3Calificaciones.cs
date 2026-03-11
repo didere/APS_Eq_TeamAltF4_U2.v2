@@ -12,6 +12,7 @@ namespace APS_Eq_TeamAltF4_U2.EjecutoresEjercicios
     {
         public RunnerPromedioDe3Calificaciones()
         {
+            try { 
             float cal1, cal2, cal3;
             Console.WriteLine("Dame la calificación 1:");
             cal1 = float.Parse(Console.ReadLine());
@@ -23,6 +24,17 @@ namespace APS_Eq_TeamAltF4_U2.EjecutoresEjercicios
             Ejercicio ejercicio;
             ejercicio = new Ejercicio_PromedioDe3Calificaciones<float>(cal1, cal2, cal3);
             ejercicio.Ejecutar();
+            }
+            catch (ArgumentException argumentException)
+            {
+                Console.WriteLine(argumentException.Message);
+                Console.WriteLine("Un argumento no cumple las restricciones de entrada");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error" + ex.Message);
+
+            }
         }
     }
 }

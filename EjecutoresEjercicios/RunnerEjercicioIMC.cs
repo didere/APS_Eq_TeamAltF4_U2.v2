@@ -11,6 +11,7 @@ namespace APS_Eq_TeamAltf4_U2.EjecutoresEjercicios
     {
         public RunnerEjercicioIMC()
         {
+            try { 
             double[] parametros = new double[2];
             Console.WriteLine("Ingresa tu peso en kg");
             parametros[0] = double.Parse(Console.ReadLine());
@@ -19,6 +20,17 @@ namespace APS_Eq_TeamAltf4_U2.EjecutoresEjercicios
 
             Ejercicio ejercicio = new Ejercicio_IMC<double>(parametros[0], parametros[1]);
             ejercicio.Ejecutar();
+            }
+            catch (ArgumentException argumentException)
+            {
+                Console.WriteLine(argumentException.Message);
+                Console.WriteLine("Un argumento no cumple las restricciones de entrada");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error" + ex.Message);
+
+            }
         }
     }
 }

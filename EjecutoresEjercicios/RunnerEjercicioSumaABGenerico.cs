@@ -11,6 +11,7 @@ namespace APS_Eq_TeamAltf4_U2.EjecutoresEjercicios
     {
         public RunnerEjercicioSumaABGenerico()
         {
+            try { 
             double a, b;
             Console.WriteLine("Dame el valor de a: ");
             a = double.Parse(Console.ReadLine());
@@ -19,6 +20,17 @@ namespace APS_Eq_TeamAltf4_U2.EjecutoresEjercicios
             Ejercicio ejercicio;
             ejercicio = new EjercicioSumaAB_Genericos<double>(a, b);
             ejercicio.Ejecutar();
+            }
+            catch (ArgumentException argumentException)
+            {
+                Console.WriteLine(argumentException.Message);
+                Console.WriteLine("Un argumento no cumple las restricciones de entrada");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error" + ex.Message);
+
+            }
         }
     }
 }

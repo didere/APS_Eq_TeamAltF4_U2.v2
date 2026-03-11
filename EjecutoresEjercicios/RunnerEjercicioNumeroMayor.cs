@@ -10,6 +10,7 @@ namespace APS_Eq_TeamAltf4_U2.EjecutoresEjercicios
     {
         public RunnerEjercicioNumeroMayor()
         {
+            try { 
             Console.WriteLine("Ingresa el primer numero: ");
             int a = int.Parse(Console.ReadLine());
             Console.WriteLine("Ingresa el segundo numero: ");
@@ -19,7 +20,17 @@ namespace APS_Eq_TeamAltf4_U2.EjecutoresEjercicios
             Ejercicio ejercicio;
             ejercicio = new Ejercicio_NumeroMayor(a, b);
             ejercicio.Ejecutar();
+            }
+            catch (ArgumentException argumentException)
+            {
+                Console.WriteLine(argumentException.Message);
+                Console.WriteLine("Un argumento no cumple las restricciones de entrada");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error" + ex.Message);
 
+            }
         }
         
     }

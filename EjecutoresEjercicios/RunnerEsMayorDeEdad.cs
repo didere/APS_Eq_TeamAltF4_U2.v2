@@ -10,12 +10,24 @@ namespace APS_Eq_TeamAltf4_U2.EjecutoresEjercicios
     {
         public RunnerEsMayorDeEdad()
         {
+            try { 
             Console.WriteLine("Dame la edad de la persona");
             int edad = int.Parse(Console.ReadLine());
 
             Ejercicio ejercicio;
             ejercicio = new Ejercicio_CompruebaMayoriaEdad(edad);
             ejercicio.Ejecutar();
+            }
+            catch (ArgumentException argumentException)
+            {
+                Console.WriteLine(argumentException.Message);
+                Console.WriteLine("Un argumento no cumple las restricciones de entrada");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error" + ex.Message);
+
+            }
         }
     }
 }

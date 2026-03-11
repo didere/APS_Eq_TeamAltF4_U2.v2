@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,17 +13,35 @@ namespace APS_Eq_TeamAltf4_U2.HandlersEjerciciosBasicos
 
         public int A
         {
-            get=>a; set => a = value;
+            get => a;
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentException("El valor de A no puede ser negativo.");
+                }
+                a = value;
+            }
         }
 
         public int B
         {
-            get => b; set => b = value;
+            get => b;
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentException("El valor de B no puede ser negativo.");
+                }
+                b = value;
+            }
         }
+
         public Ejercicio_MultiplicacionAB() : base(6, "Multiplicacion AB", "Multiplicar los numeros A y B")
         {
  
         }
+
         public Ejercicio_MultiplicacionAB(int a, int b) : base (6, "Multiplicacion AB", "Multiplicar los numeros A y B")
         {
             A = a;
@@ -33,7 +51,7 @@ namespace APS_Eq_TeamAltf4_U2.HandlersEjerciciosBasicos
         public override void Ejecutar()
         {
             int resultado = A * B;
-            Console.WriteLine("Resultado de la suma: " + resultado);
+            Console.WriteLine("Resultado de la multiplicacion: " + resultado);
         }
     }
 }

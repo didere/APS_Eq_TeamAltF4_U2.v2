@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,13 +15,27 @@ namespace APS_Eq_TeamAltf4_U2.HandlersEjerciciosBasicos
         public T A
         {
             get => a;
-            set => a = value;
+            set
+            {
+                if (value == null)
+                {
+                    throw new ArgumentNullException("El valor de A no puede ser nulo.");
+                }
+                a = value;
+            }
         }
 
         public T B
         {
             get => b;
-            set => b = value;
+            set
+            {
+                if (value == null)
+                {
+                    throw new ArgumentNullException("El valor de B no puede ser nulo.");
+                }
+                b = value;
+            }
         }
 
         public EjercicioSumaAB_Genericos(T a, T b) : base(7, "Suma con datos Genericos", "Suma con datos genericos")
@@ -35,12 +49,11 @@ namespace APS_Eq_TeamAltf4_U2.HandlersEjerciciosBasicos
           
         }
 
-
         public override void Ejecutar()
         {
             // parse es string to numero
             double resultado = Convert.ToDouble(A) + Convert.ToDouble(B);
-            Console.WriteLine("La suma de A + B= " +resultado);
+            Console.WriteLine("La suma de A + B= " + resultado);
         }
     }
 }
