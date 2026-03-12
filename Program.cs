@@ -5,6 +5,7 @@ using APS_Eq_TeamAltf4_U2.HandlersEjerciciosBasicos;
 using APS_Eq_TeamAltF4_U2.EjecutoresEjercicios;
 using APS_Eq_TeamAltF4_U2.v2.EjecutoresEjercicios;
 using APS_Eq_TeamAltF4_U2.v2.HandlersEjerciciosBasicos;
+using APS_Eq_TeamAltF4_U2.v2.ListasGenericas;
 
 namespace APS_Eq_TeamAltf4_U2
 {
@@ -88,6 +89,10 @@ namespace APS_Eq_TeamAltf4_U2
                         break;
                     case 15:
                         new RunnerPerimetroPolRegular();
+                        break;
+                    //prueba
+                    case 20:
+                        new Ej2_ListaEnlazada();
                         break;
                 }
             } while (idx != 0);
