@@ -5,6 +5,7 @@ using APS_Eq_TeamAltf4_U2.HandlersEjerciciosBasicos;
 using APS_Eq_TeamAltF4_U2.EjecutoresEjercicios;
 using APS_Eq_TeamAltF4_U2.v2.EjecutoresEjercicios;
 using APS_Eq_TeamAltF4_U2.v2.HandlersEjerciciosBasicos;
+using APS_Eq_TeamAltF4_U2.v2.JuegosAzar;
 using APS_Eq_TeamAltF4_U2.v2.ListasGenericas;
 
 namespace APS_Eq_TeamAltf4_U2
@@ -93,6 +94,15 @@ namespace APS_Eq_TeamAltf4_U2
                     //prueba
                     case 20:
                         new Ej2_ListaEnlazada();
+                        break;
+                    case 21:
+                        new Ej3_Lista();
+                        break;
+                    case 22:
+                        new Ej4_pokemon();
+                        break;
+                    case 23:
+                        new JuegoDado();
                         break;
                 }
             } while (idx != 0);
