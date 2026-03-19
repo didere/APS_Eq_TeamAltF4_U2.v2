@@ -7,6 +7,7 @@ using APS_Eq_TeamAltF4_U2.v2.EjecutoresEjercicios;
 using APS_Eq_TeamAltF4_U2.v2.HandlersEjerciciosBasicos;
 using APS_Eq_TeamAltF4_U2.v2.JuegosAzar;
 using APS_Eq_TeamAltF4_U2.v2.ListasGenericas;
+using APS_Eq_TeamAltF4_U2.v2.RPG_Mini_Clase;
 
 namespace APS_Eq_TeamAltf4_U2
 {
@@ -43,7 +44,7 @@ namespace APS_Eq_TeamAltf4_U2
 
               
                 int.TryParse(Console.ReadLine(), out idx);
-
+                idx = 24;
                 switch (idx)
                 {
                     case 1:
@@ -103,6 +104,9 @@ namespace APS_Eq_TeamAltf4_U2
                         break;
                     case 23:
                         new JuegoDado();
+                        break;
+                    case 24:
+                        new Mainjuego();
                         break;
                 }
             } while (idx != 0);
