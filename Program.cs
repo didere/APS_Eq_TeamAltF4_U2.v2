@@ -43,7 +43,7 @@ namespace APS_Eq_TeamAltf4_U2
                 }
 
               
-                int.TryParse(Console.ReadLine(), out idx);
+                //int.TryParse(Console.ReadLine(), out idx);
                 idx = 24;
                 switch (idx)
                 {

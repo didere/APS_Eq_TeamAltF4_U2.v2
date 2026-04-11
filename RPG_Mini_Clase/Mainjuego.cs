@@ -25,6 +25,20 @@ namespace APS_Eq_TeamAltF4_U2.v2.RPG_Mini_Clase
                 indice = random.Next(0, enemigos.Count);
                 Enemigo enemigo_a_vencer = enemigos[indice];
                 Console.WriteLine($"ha aparecido{enemigo_a_vencer.Nombre}");
+
+                Console.WriteLine("¨Proceso de ataque iniciado presione una tecla para continuar");
+                Console.ReadKey();                do { 
+                    pPlayer.EfectuarAtaque(enemigo_a_vencer);
+                    if (enemigo_a_vencer.Vida > 0)
+                    {
+                        enemigo_a_vencer.EfectuarAtaque(pPlayer);
+                        Console.WriteLine("Turno terminado, Presione una tecla para continuar");
+                        Console.ReadKey();
+                    }
+                }
+                while (pPlayer.Vida > 0 && enemigo_a_vencer.Vida > 0);
+                #region
+                /*
                 do
                 {
                     Console.WriteLine("Que opcion deseas hacer?: (1.-Atacar, 2.- Defender)");
@@ -52,9 +66,22 @@ namespace APS_Eq_TeamAltF4_U2.v2.RPG_Mini_Clase
                 else
                 {
 
-                }
+                }*/
+                #endregion
+                Console.WriteLine("Enemigo derrotado");
+                enemigos.RemoveAt(indice); //eliminate at
             }
-            while (pPlayer.Vida>0);
+            while (pPlayer.Vida > 0 && enemigos.Count > 0);
+
+            if(pPlayer.Vida>0)
+            {
+                Console.WriteLine("Has gando el juego");
+
+            }
+            else
+            {
+                Console.WriteLine("Has muerto ");
+            }
         }
     }
 }
